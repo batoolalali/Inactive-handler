@@ -4,6 +4,8 @@ const inactivityDuration = 300000; // 0.5 minute (in milliseconds)
 
 let inactiveDivEl = document.getElementById("inactive");
 let activeDivEl = document.getElementById("active");
+let ulEl = document.getElementById("letter");
+
 
 
 let pEl = document.createElement("p");
@@ -16,9 +18,16 @@ function resetInactivityTimer() {
     pEl.textContent = `last activity at ${new Date()}`
 }
 
+let i=1;
 
+setInterval(printFunction, 30000)
 
+function printFunction(){
+    let liEl = document.createElement("li");
+    ulEl.appendChild(liEl);
+    liEl.textContent= `Number: ${i++}`;
 
+}
 
 
 
