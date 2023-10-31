@@ -1,6 +1,6 @@
 
 let inactivityTimeout;
-const inactivityDuration = 30000; // 0.5 minute (in milliseconds)
+const inactivityDuration = 300000; // 0.5 minute (in milliseconds)
 
 let inactiveDivEl = document.getElementById("inactive");
 let activeDivEl = document.getElementById("active");
