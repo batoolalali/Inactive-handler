@@ -12,7 +12,7 @@
 const blurDiv = document.getElementById("blur");
 const stateDiv = document.getElementById("state");
 
-let prevState;
+let prevState = document.visibilityState;
 
 document.onvisibilitychange = function () {
 
