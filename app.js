@@ -4,17 +4,27 @@
 // window.addEventListener("focus", visibilitychanged);
 // window.addEventListener("blur", blur);
 
+
+
+
+
+// const visibilityDiv = document.getElementById("visibilitychange");
+const blurDiv = document.getElementById("blur");
+const stateDiv = document.getElementById("state");
+
+
 document.onvisibilitychange = function () {
+
+    let pEl = document.createElement("p");
+    stateDiv.appendChild(pEl);
+    pEl.innerHTML = `State is <strong>${document.visibilityState}</srong>`
+
+
     if (document.visibilityState === 'hidden') {
         // here I should send to mij
         blur()
     }
 };
-
-
-// const visibilityDiv = document.getElementById("visibilitychange");
-const blurDiv = document.getElementById("blur");
-
 
 
 // function visibilitychanged() {
