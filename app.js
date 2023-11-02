@@ -17,7 +17,7 @@ document.onvisibilitychange = function () {
 
     let pEl = document.createElement("p");
     stateDiv.appendChild(pEl);
-    pEl.innerHTML = `State is <strong>${document.visibilityState}</strong>`
+    pEl.textContent = `State is ${document.visibilityState}`
 
 
     if (document.visibilityState === 'hidden') {
