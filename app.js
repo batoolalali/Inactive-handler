@@ -13,19 +13,23 @@ const blurDiv = document.getElementById("blur");
 const stateDiv = document.getElementById("state");
 
 let prevState = document.visibilityState;
+console.log("prev", prevState)
 
 document.onvisibilitychange = function () {
 
-    let prevState= document.visibilityState;
     let pEl2 = document.createElement("p");
     stateDiv.appendChild(pEl2);
     pEl2.textContent = `State is ${document.visibilityState}`
 
 
+console.log("prev", prevState);
+
     if (document.visibilityState === 'hidden' && prevState!="hidden")  {
         // here I should send to mij
         blur()
     }
+     prevState= document.visibilityState;
+
 };
 
 
