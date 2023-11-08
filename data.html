@@ -9,12 +9,16 @@
 
 <body>
 
+
     <a href="index.html">Home Page</a>
 
+    <button id="clear">clear storage</button>
 
     <div id="pre">
 
     </div>
+
+
 
 
     <script>
@@ -58,6 +62,16 @@
 
 
 
+
+        let btn= document.getElementById("clear")
+
+        btn.addEventListener("click", clearStorage)
+
+
+        function clearStorage() {
+            localStorage.removeItem("myObject")
+            localStorage.removeItem("allData")
+        }
 
 
 
