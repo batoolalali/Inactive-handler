@@ -99,7 +99,7 @@ function sessionEnd() {
         reported: reported,
         duration: totalTime,
     }
-
+    let data = []
     // Convert the object to a JSON string
     // let jsonString = JSON.stringify(mijObj);
 
@@ -120,7 +120,6 @@ function sessionEnd() {
     console.log(retrievedArray)
     if (retrievedArray) {
 
-        data=[]
         for (let i = 0; i < retrievedArray.data.length; i++) {
 
             data.push(retrievedArray.data[i])
