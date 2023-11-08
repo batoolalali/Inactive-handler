@@ -74,6 +74,8 @@ document.onvisibilitychange = function () {
         sessionEnd()
     }
     prevState = document.visibilityState;
+    reported = []
+
 
 };
 
