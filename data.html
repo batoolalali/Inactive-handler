@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data</title>
+</head>
+
+<body>
+
+    <div id="pre">
+
+    </div>
+
+
+    <script>
+
+        let allData = []
+        let pre = document.getElementById("pre");
+
+        let jsonString = localStorage.getItem('myObject');
+        let retrievedObj = JSON.parse(jsonString);
+        console.log("retrievedObj", retrievedObj)
+
+        localStorage.removeItem("myObject")
+
+
+
+
+
+        let jsonString1 = localStorage.getItem('allData');
+        retrievedArray = JSON.parse(jsonString1);
+        console.log("allData", retrievedArray)
+
+        if (retrievedArray)
+            for (let i = 0; i < retrievedArray.length; i++) {
+                allData.push(retrievedArray[i])
+            }
+
+        if (retrievedObj) {
+
+            allData.push(retrievedObj);
+            let jsonString2 = JSON.stringify(allData);
+            localStorage.setItem('allData', jsonString2);
+
+            let jsonString1 = localStorage.getItem('allData');
+            retrievedArray = JSON.parse(jsonString1);
+
+            let preEl = document.createElement('pre');
+            preEl.innerHTML = JSON.stringify(retrievedArray, null, 2)
+
+            pre.appendChild(preEl)
+        }
+
+
+
+
+
+
+
+
+
+        // allData.push(retrievedObj);
+
+        // console.log(allData)
+
+        // let jsonString2 = JSON.stringify({ allData });
+
+        // // Save the JSON string to local storage
+        // localStorage.setItem('allData', jsonString2);
+
+
+
+
+    </script>
+
+</body>
+
+</html>
