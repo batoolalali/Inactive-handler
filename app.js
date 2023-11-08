@@ -63,6 +63,7 @@ let prevState = document.visibilityState;
 
 document.onvisibilitychange = function () {
 
+
     /****testing *****/
     let pEl2 = document.createElement("p");
     stateDiv.appendChild(pEl2);
@@ -96,20 +97,35 @@ function sessionEnd() {
     let mijObj = {
         date: new Date(),
         reported: reported,
-        sessionAddress: sessionAddress,
-        duration: totalTime
+        duration: totalTime,
     }
 
     // Convert the object to a JSON string
-    let jsonString = JSON.stringify(mijObj);
+    // let jsonString = JSON.stringify(mijObj);
 
-    // Save the JSON string to local storage
-    localStorage.setItem('myObject', jsonString);
+    // // Save the JSON string to local storage
+    // localStorage.setItem('myObject', jsonString);
 
-    if (location.href.includes("github"))
-        location.pathname = '/Inactive-handler/data.html'
-    else
-        location.pathname = '/data.html'
+    // if (location.href.includes("github"))
+    //     location.pathname = '/Inactive-handler/data.html'
+    // else
+    //     location.pathname = '/data.html'
+
+
+    data.push(mijObj);
+
+    let jsonString1 = localStorage.getItem('allData');
+   let retrievedArray = JSON.parse(jsonString1);
+
+   console.log(retrievedArray)
+    if (retrievedArray)
+        for (let i = 0; i < retrievedArray.data.length; i++) {
+
+            data.push(retrievedArray.data[i])
+        }
+
+    let jsonString2 = JSON.stringify({ count: data.length, data: data });
+    localStorage.setItem('allData', jsonString2);
 
 
 

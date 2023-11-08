@@ -26,11 +26,10 @@
         let allData = []
         let pre = document.getElementById("pre");
 
-        let jsonString = localStorage.getItem('myObject');
-        let retrievedObj = JSON.parse(jsonString);
-        console.log("retrievedObj", retrievedObj)
 
-        localStorage.removeItem("myObject")
+
+
+
 
 
 
@@ -38,32 +37,17 @@
 
         let jsonString1 = localStorage.getItem('allData');
         retrievedArray = JSON.parse(jsonString1);
-        console.log("allData", retrievedArray)
 
-        if (retrievedArray)
-            for (let i = 0; i < retrievedArray.length; i++) {
-                allData.push(retrievedArray[i])
-            }
+        let preEl = document.createElement('pre');
+        preEl.innerHTML = JSON.stringify(retrievedArray, null, 2)
 
-        if (retrievedObj) {
-
-            allData.push(retrievedObj);
-            let jsonString2 = JSON.stringify(allData);
-            localStorage.setItem('allData', jsonString2);
-
-            let jsonString1 = localStorage.getItem('allData');
-            retrievedArray = JSON.parse(jsonString1);
-
-            let preEl = document.createElement('pre');
-            preEl.innerHTML = JSON.stringify(retrievedArray, null, 2)
-
-            pre.appendChild(preEl)
-        }
+        pre.appendChild(preEl)
 
 
 
 
-        let btn= document.getElementById("clear")
+
+        let btn = document.getElementById("clear")
 
         btn.addEventListener("click", clearStorage)
 
@@ -72,7 +56,7 @@
             localStorage.removeItem("myObject")
             localStorage.removeItem("allData")
 
-           pre.innerHTML = ""
+            pre.innerHTML = ""
         }
 
 
