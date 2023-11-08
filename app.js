@@ -106,7 +106,10 @@ function sessionEnd() {
     // Save the JSON string to local storage
     localStorage.setItem('myObject', jsonString);
 
-    location.pathname = '/data.html'
+    if (location.href.includes("github"))
+        location.pathname = '/Inactive-handler/data.html'
+    else
+        location.pathname = '/data.html'
 
 
 
