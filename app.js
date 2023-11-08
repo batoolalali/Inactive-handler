@@ -115,14 +115,17 @@ function sessionEnd() {
     data.push(mijObj);
 
     let jsonString1 = localStorage.getItem('allData');
-   let retrievedArray = JSON.parse(jsonString1);
+    let retrievedArray = JSON.parse(jsonString1);
 
-   console.log(retrievedArray)
-    if (retrievedArray)
+    console.log(retrievedArray)
+    if (retrievedArray) {
+
+        data=[]
         for (let i = 0; i < retrievedArray.data.length; i++) {
 
             data.push(retrievedArray.data[i])
         }
+    }
 
     let jsonString2 = JSON.stringify({ count: data.length, data: data });
     localStorage.setItem('allData', jsonString2);
