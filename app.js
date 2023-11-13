@@ -61,8 +61,10 @@ const stateDiv = document.getElementById("state");
 // event VARS
 let prevState = document.visibilityState;
 
+
+
 // document.onvisibilitychange = function () {
-    document.addEventListener('visibilitychange', function () {
+window.addEventListener('pagehide', function () {
 
     /****testing *****/
     let pEl2 = document.createElement("p");
@@ -70,11 +72,12 @@ let prevState = document.visibilityState;
     pEl2.textContent = `State is ${document.visibilityState}`
     /**** testing *****/
 
-    if (document.visibilityState === 'hidden' && prevState != "hidden") {
+    // if (document.visibilityState === 'hidden' && prevState != "hidden") {
         sessionEnd()
-    }
+    // }
     prevState = document.visibilityState;
     reported = []
+
 
 });
 
