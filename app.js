@@ -61,8 +61,8 @@ const stateDiv = document.getElementById("state");
 // event VARS
 let prevState = document.visibilityState;
 
-document.onvisibilitychange = function () {
-
+// document.onvisibilitychange = function () {
+    document.addEventListener('visibilitychange', function () {
 
     /****testing *****/
     let pEl2 = document.createElement("p");
@@ -76,8 +76,9 @@ document.onvisibilitychange = function () {
     prevState = document.visibilityState;
     reported = []
 
+});
 
-};
+// };
 
 
 
